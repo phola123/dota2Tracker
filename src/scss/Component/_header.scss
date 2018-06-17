@@ -1,0 +1,41 @@
+header {
+  height: 100vh;
+  width: 100%;
+}
+
+.spacer__fixed {
+  height: 205px;
+}
+
+.header {
+
+  &__wrapper {
+    height: 100%;
+    width: 100%;
+    background-image: url('../assets/img/Site/bg_02.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  &__content {
+    text-align: center;
+    font-family: $font-logo;
+    color: #f65111;
+    padding: 0 20px;
+
+    h1 {
+      margin: 1rem;
+      font-size: 8rem;
+      text-shadow: 6px 6px 7px #000;
+    }
+
+    img {
+      max-width: 300px;
+    }
+
+  }
+
+
+
+}
