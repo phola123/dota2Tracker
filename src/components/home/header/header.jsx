@@ -15,7 +15,7 @@ const Header = () => {
           <div className="header__content _block">
 
             <img src={coverLogo} alt="logo"></img>
-            <h1>Dota Scouter</h1>
+            <h1>Dota Stalker</h1>
 
           </div>
 

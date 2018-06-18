@@ -8,7 +8,7 @@ const NavbarDesktop = () => {
       {/*Logo Container*/}
       <div className="navbar__logo">
         <img src={logo} alt="logo" />
-        <p>Dota Scouter</p>
+        <p>Dota Stalker</p>
       </div>
 
       <div className="navbar__item">
