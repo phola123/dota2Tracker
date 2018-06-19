@@ -17,7 +17,8 @@ class Navbar extends Component {
   }
   // lifecycle hooks
   componentDidMount() {
-    window.addEventListener("resize", this.checkWindowResize )
+    window.addEventListener("resize", this.checkWindowResize );
+    window.addEventListener("load", this.checkWindowResize );
   }
 
   // windows size checker

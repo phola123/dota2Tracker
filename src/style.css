@@ -2287,7 +2287,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: none; }
+  overflow: none;
+  display: none; }
   .coming__soon h1 {
     color: #fff;
     font-size: 130px;
