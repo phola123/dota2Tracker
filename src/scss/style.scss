@@ -63,8 +63,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: none;
-  display: none;
-
+  transition: 0.3s ease;
   h1 {
     color:#fff;
     font-size: 130px;
@@ -72,6 +71,14 @@ body {
     text-shadow: 6px 6px 7px #000;
   }
 
+}
+
+.gg {
+  display: none;
+}
+
+.display-none {
+  opacity: 0;
 }
 
 /* Custom imports */

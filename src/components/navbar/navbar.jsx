@@ -19,6 +19,13 @@ class Navbar extends Component {
   componentDidMount() {
     window.addEventListener("resize", this.checkWindowResize );
     window.addEventListener("load", this.checkWindowResize );
+    setTimeout(()=>{
+        document.querySelector(".coming__soon").classList.add("display-none");
+    },10000);
+    setTimeout(()=>{
+        document.querySelector(".coming__soon").classList.add("gg");
+    },10200);
+
   }
 
   // windows size checker
