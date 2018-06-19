@@ -2288,7 +2288,8 @@ body {
   justify-content: center;
   align-items: center;
   overflow: none;
-  transition: 0.3s ease; }
+  transition: 0.3s ease;
+  display: none; }
   .coming__soon h1 {
     color: #fff;
     font-size: 130px;
@@ -2408,7 +2409,7 @@ nav {
     width: 120px;
     position: absolute;
     bottom: -60px;
-    left: 60px;
+    left: 0px;
     right: 0;
     margin: 0 auto;
     transform: rotate(-45deg);
@@ -2425,7 +2426,7 @@ nav {
     margin: 0;
     font-family: "Conv_againts";
     letter-spacing: 5px;
-    color: #f65111;
+    color: #46caab;
     font-size: 2rem;
     font-weight: 700;
     font-style: italic;
@@ -2460,20 +2461,25 @@ header {
 
 .header__wrapper {
   height: 100%;
+  min-height: 100vh;
   width: 100%;
   background-image: url("assets/img/Site/bg_02.jpg");
   background-size: cover;
   background-attachment: fixed;
-  background-position: center; }
+  background-position: center;
+  padding-bottom: 40px; }
 
 .header__content {
   text-align: center;
   font-family: "Conv_againts";
-  color: #f65111;
+  color: #46caab;
   padding: 0 20px; }
   .header__content h1 {
-    margin: 1rem;
+    margin: 1rem 0;
     font-size: 8rem;
     text-shadow: 6px 6px 7px #000; }
+  .header__content .coverLogo__container {
+    max-width: 350px;
+    margin: 0 auto; }
   .header__content img {
-    max-width: 300px; }
+    width: 100%; }
