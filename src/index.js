@@ -6,7 +6,7 @@ import App from './cockpit/app.jsx';
 // Material css Import
 import './assets/scss/material-kit-react.scss';
 // GLobal scss Import
-import './scss/style.scss';
+import './style.css';
 
 ReactDom.render(
   <App/>,
