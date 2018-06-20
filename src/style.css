@@ -2463,10 +2463,6 @@ header {
   height: 100%;
   min-height: 100vh;
   width: 100%;
-  background-image: url("assets/img/Site/bg_02.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
   padding-bottom: 40px; }
 
 .header__content {
@@ -2480,6 +2476,46 @@ header {
     text-shadow: 6px 6px 7px #000; }
   .header__content .coverLogo__container {
     max-width: 350px;
-    margin: 0 auto; }
-  .header__content img {
-    width: 100%; }
+    margin: 0 auto;
+    position: relative; }
+    .header__content .coverLogo__container img {
+      width: 100%; }
+  .header__content .eye {
+    position: absolute;
+    width: 15px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: transparent; }
+  .header__content .left__eye {
+    top: 117px;
+    left: 105px; }
+  .header__content .right__eye {
+    top: 116px;
+    left: 140px; }
+  .header__content .eyeLightNight {
+    animation-name: eyeLight;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+
+.header__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+  .header__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center; }
+
+@keyframes eyeLight {
+  0% {
+    box-shadow: 10px 0px 44px 18px rgba(241, 242, 134, 0); }
+  50% {
+    box-shadow: 10px 0px 44px 18px rgba(241, 242, 134, 0.7); }
+  100% {
+    box-shadow: 10px 0px 44px 18px rgba(241, 242, 134, 0); } }
