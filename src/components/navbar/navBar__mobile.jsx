@@ -2,7 +2,43 @@ import React from 'react';
 
 const NavbarMobile = () => {
   return (
-    <h1>Hello from Navbar mobile</h1>
+    <div className="mobNav">
+      <input type="checkbox" id="menu-toggle"/>
+      <label id="trigger" htmlFor="menu-toggle"></label>
+      <label id="burger" htmlFor="menu-toggle"></label>
+      <ul id="menu">
+        <li>
+          {/*Nav Item*/}
+          <div className="navbar__item-desk">
+            <p>Meta</p>
+          </div>
+        </li>
+
+        <li>
+          {/*Nav Item*/}
+          <div className="navbar__item-desk">
+            <p>Matches</p>
+          </div>
+        </li>
+
+        <li>
+          {/*Nav Item*/}
+          <div className="navbar__item-desk">
+            <p>Records</p>
+          </div>
+
+        </li>
+
+        <li>
+
+          {/*Nav Item*/}
+          <div className="navbar__item-desk">
+            <p>Heroes</p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
   )
 }
 

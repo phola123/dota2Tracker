@@ -64,6 +64,14 @@
   }
 }
 
+// For designs above phone {Includes both desktop & tablets}
+@mixin below__desktop {
+  @media (max-width: 991px) {
+    // 768
+    @content;
+  }
+}
+
 
 // Small devices like iPhone 5s & others.
 @mixin small__phone {

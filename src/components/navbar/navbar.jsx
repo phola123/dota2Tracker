@@ -48,8 +48,7 @@ class Navbar extends Component {
 
     return(
       <nav>
-        {/* { this.state.isMobile ? <NavbarMobile/> : <NavbarDesktop/> } */}
-        <NavbarDesktop/>
+        { this.state.isMobile ? <NavbarMobile/> : <NavbarDesktop/> }
       </nav>
     )
 

@@ -1,6 +1,7 @@
 nav {
   position: fixed;
   width: 100%;
+  z-index: 99;
 }
 
 
@@ -81,6 +82,8 @@ nav {
         border-bottom: 3px solid #f65111;
         text-shadow: 6px 6px 5px #fff;
       }
+
+
 
     }
 

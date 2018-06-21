@@ -9,8 +9,11 @@ class Header extends Component  {
     super(props);
 
     this.state = {
-      isNightTime: false
+      isNightTime: false,
+      isPlaying : false
     }
+
+    this.newSound = new Audio("https://d1u5p3l4wpay3k.cloudfront.net/dota2_gamepedia/4/4f/Darkness.mp3");
 
   }
   // night time Checker
@@ -51,7 +54,24 @@ class Header extends Component  {
 
   }
 
-// lifecycle Hooks
+  dialougePlayer = () => {
+
+    this.setState({isNightTime: true});
+
+    setTimeout(()=> {
+      this.setState({isNightTime: false});
+    },40000)
+
+    if( this.newSound.paused ) {
+      this.newSound.play();
+    }
+    else if(!this.newSound.paused) {
+      this.newSound.pause();
+    }
+
+  }
+
+  // lifecycle Hooks
   componentWillMount() {
     this.nightTimeChecker();
   }
@@ -76,7 +96,7 @@ class Header extends Component  {
 
             <div className="header__content">
 
-              <div className="coverLogo__container">
+              <div onClick={this.dialougePlayer} className="coverLogo__container">
                 <div className="left__eye eye"></div>
                 <img src={coverLogo} alt="logo" />
                 <div className="right__eye eye"></div>

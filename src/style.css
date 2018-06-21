@@ -2393,7 +2393,8 @@ body {
 
 nav {
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 99; }
 
 .navbar__container {
   display: flex;
@@ -2452,12 +2453,120 @@ nav {
       border-bottom: 3px solid #f65111;
       text-shadow: 6px 6px 5px #fff; }
 
+@keyframes checked-anim {
+  50% {
+    width: 1500px;
+    height: 1500px; }
+  100% {
+    width: 100vw;
+    height: 100vh; } }
+
+@keyframes not-checked-anim {
+  0% {
+    width: 500px;
+    height: 500px; } }
+
+li, a {
+  margin: 75px 0 -55px 0;
+  color: #03A9F4;
+  font: 14pt "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 1.8;
+  text-decoration: none;
+  text-transform: none;
+  list-style: none;
+  outline: 0;
+  display: none; }
+
+li {
+  width: 230px;
+  text-indent: 56px; }
+
+a:focus {
+  display: block;
+  color: #333;
+  background-color: #eee;
+  transition: all .5s; }
+
+#trigger, #burger, #burger:before, #burger:after {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: #03A9F4;
+  width: 30px;
+  height: 5px;
+  transition: .2s ease;
+  cursor: pointer;
+  z-index: 1; }
+
+#trigger {
+  height: 25px;
+  background: none; }
+
+#burger:before {
+  content: " ";
+  top: 10px;
+  left: 0; }
+
+#burger:after {
+  content: " ";
+  top: 20px;
+  left: 0; }
+
+#menu-toggle:checked + #trigger + #burger {
+  top: 35px;
+  transform: rotate(180deg);
+  transition: transform .2s ease; }
+
+#menu-toggle:checked + #trigger + #burger:before {
+  width: 20px;
+  top: -2px;
+  left: 18px;
+  transform: rotate(45deg) translateX(-5px);
+  transition: transform .2s ease; }
+
+#menu-toggle:checked + #trigger + #burger:after {
+  width: 20px;
+  top: 2px;
+  left: 18px;
+  transform: rotate(-45deg) translateX(-5px);
+  transition: transform .2s ease; }
+
+#menu {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 110px;
+  height: 110px;
+  background-color: #100f37;
+  border-bottom-right-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  animation: not-checked-anim .2s both;
+  transition: .2s; }
+
+#menu-toggle:checked + #trigger + #burger + #menu {
+  animation: checked-anim 1s ease-in-out both;
+  background-image: url("assets/img/Site/coming__soon.jpg"); }
+  @media (max-width: 767px) {
+    #menu-toggle:checked + #trigger + #burger + #menu {
+      background-position-x: -490px; } }
+
+#menu-toggle:checked + #trigger ~ #menu > li, a {
+  display: block; }
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  display: none; }
+
 header {
   height: auto;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
 
 .spacer__fixed {
   height: 205px; }
+  @media (max-width: 767px) {
+    .spacer__fixed {
+      height: 140px; } }
 
 .header__wrapper {
   height: 100%;
@@ -2468,30 +2577,47 @@ header {
 .header__content {
   text-align: center;
   font-family: "Conv_againts";
-  color: #46caab;
-  padding: 0 20px; }
+  color: #46caab; }
   .header__content h1 {
     margin: 1rem 0;
     font-size: 8rem;
     text-shadow: 6px 6px 7px #000; }
+    @media (max-width: 767px) {
+      .header__content h1 {
+        font-size: 20vw; } }
   .header__content .coverLogo__container {
     max-width: 350px;
     margin: 0 auto;
     position: relative; }
+    @media (max-width: 767px) {
+      .header__content .coverLogo__container {
+        max-width: 250px; } }
     .header__content .coverLogo__container img {
       width: 100%; }
   .header__content .eye {
     position: absolute;
-    width: 15px;
-    height: 8px;
+    width: 12px;
+    height: 7px;
     border-radius: 50%;
     background-color: transparent; }
+    @media (max-width: 767px) {
+      .header__content .eye {
+        width: 7px;
+        height: 5px; } }
   .header__content .left__eye {
-    top: 117px;
+    top: 116px;
     left: 105px; }
+    @media (max-width: 767px) {
+      .header__content .left__eye {
+        top: 84px;
+        left: 76px; } }
   .header__content .right__eye {
     top: 116px;
     left: 140px; }
+    @media (max-width: 767px) {
+      .header__content .right__eye {
+        top: 83px;
+        left: 101px; } }
   .header__content .eyeLightNight {
     animation-name: eyeLight;
     animation-duration: 3s;
