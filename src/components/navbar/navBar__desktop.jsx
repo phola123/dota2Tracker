@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Route} from 'react-router-dom';
 
 import logo from "../../assets/img/Site/logo.png";
 
@@ -14,24 +15,28 @@ const NavbarDesktop = () => {
       <div className="navbar__item">
         {/*Nav Item*/}
         <div className="navbar__item-desk">
-          <p>Meta</p>
+          <Link to="meta"><p>Meta</p></Link>
         </div>
 
         {/*Nav Item*/}
         <div className="navbar__item-desk">
-          <p>Matches</p>
+          <Link to="matches"><p>Matches</p></Link>
         </div>
 
         {/*Nav Item*/}
         <div className="navbar__item-desk">
-          <p>Heroes</p>
+          <Link to="heroes"><p>Heroes</p></Link>
         </div>
 
         {/*Nav Item*/}
         <div className="navbar__item-desk">
-          <p>Records</p>
+          <Link to="records"><p>Records</p></Link>
         </div>
       </div>
+      <Route path="/meta" ></Route>
+      <Route path="/matches"></Route>
+      <Route path="/heroes" ></Route>
+      <Route path="/records"></Route>
 
     </div>
   )

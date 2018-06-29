@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import coverLogo from '../../../assets/img/Site/logo.png';
 import bgImg from '../../../assets/img/Site/bg_02.jpg';
 import bgImg2 from '../../../assets/img/Site/bg-01.jpg';
+import dotaDown from '../../../assets/img/Site/logo2.png'
 
 class Header extends Component  {
   constructor(props) {
@@ -14,6 +15,7 @@ class Header extends Component  {
     }
 
     this.newSound = new Audio("https://d1u5p3l4wpay3k.cloudfront.net/dota2_gamepedia/4/4f/Darkness.mp3");
+    this.nightTime = new Audio("https://d1u5p3l4wpay3k.cloudfront.net/dota2_gamepedia/f/f1/Nstalk_spawn_02.mp3");
 
   }
   // night time Checker
@@ -42,7 +44,6 @@ class Header extends Component  {
   // nightLight Setter
 
   nightLight = () => {
-
     if(this.state.isNightTime) {
       document.querySelector(".left__eye").classList.add("eyeLightNight");
       document.querySelector(".right__eye").classList.add("eyeLightNight");
@@ -56,18 +57,40 @@ class Header extends Component  {
 
   dialougePlayer = () => {
 
-    this.setState({isNightTime: true});
+    // ultimate Effect
+    if(!this.state.isNightTime) {
+      this.setState({isNightTime: true});
 
-    setTimeout(()=> {
-      this.setState({isNightTime: false});
-    },40000)
+      setTimeout(()=> {
+        this.nightLight();
+      },1000);
 
-    if( this.newSound.paused ) {
-      this.newSound.play();
+      if( this.newSound.paused ) {
+        this.newSound.play();
+
+      }
+      else if(!this.newSound.paused) {
+        this.newSound.load();
+      }
+
+      setTimeout(()=> {
+        this.nightTimeChecker();
+        this.nightLight();
+      },40000)
+
     }
-    else if(!this.newSound.paused) {
-      this.newSound.pause();
+
+    // Night Dialouge
+    else {
+      if( this.nightTime.paused ) {
+        this.nightTime.play();
+
+      }
+      else if(!this.nightTime.paused) {
+        this.nightTime.load();
+      }
     }
+
 
   }
 
@@ -103,9 +126,15 @@ class Header extends Component  {
               </div>
 
               <h1>Dota Stalker</h1>
+              <p>A Dota 2 Data Portal</p>
 
             </div>
 
+          </div>
+          <div className="dotaDown__container">
+            <a  className="dotaDown" href='#section1 '>
+              <img src={dotaDown} alt="down"/>
+            </a>
           </div>
         </div>
 

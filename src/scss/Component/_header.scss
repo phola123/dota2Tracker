@@ -2,6 +2,37 @@ header {
   height: auto;
   width: 100%;
   position: relative;
+
+  .dotaDown {
+    max-width: 80px;
+    margin: 0 auto;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    animation-name: bounceDota;
+    animation-fill-mode: both;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    transition: 0.3s ease-in-out;
+
+    &:focus {
+      background: transparent;
+      outline: none;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &__container {
+      height: 110px;
+    }
+
+  }
+
 }
 
 .spacer__fixed {
@@ -36,6 +67,19 @@ header {
         font-size: 20vw;
       }
 
+    }
+
+    p {
+      font-family: $font-primary;
+      font-weight: 400;
+      color: #fff;
+      font-size: 36px;
+      text-shadow: 1px 3px 9px #000;
+      margin-top: 30px;
+
+      @include phone {
+        font-size: 5vw;
+      }
     }
 
     .coverLogo__container {
@@ -121,6 +165,18 @@ header {
 
 
 
+}
+
+@keyframes bounceDota {
+  0% {
+    transform: rotate(45deg) translateX(0);
+  }
+  50% {
+    transform: rotate(0deg) translateX(-20px);
+  }
+  100% {
+    transform: rotate(45deg) translateX(0);
+  }
 }
 
 @keyframes eyeLight {

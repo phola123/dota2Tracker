@@ -15,25 +15,20 @@ nav {
     background-color: rgba(31, 40, 51, 0.8);
     position: relative;
 
-    &:after {
-      content: "";
-      display: block;
-      height: 120px;
-      width: 120px;
-      position: absolute;
-      bottom: -60px;
-      left: 0px;
-      right: 0;
-      margin: 0 auto;
-      transform: rotate(-45deg);
-      background-image: url("assets/img/Site/logo2.png");
-      background-size: contain;
-      // animation-name: dota2;
-      // animation-duration: 10s;
-      // animation-fill-mode: forwards;
-      // animation-iteration-count: infinite;
-      // animation-timing-function: linear;
-    }
+    // &:after {
+    //   content: "";
+    //   display: block;
+    //   height: 120px;
+    //   width: 120px;
+    //   position: absolute;
+    //   bottom: -60px;
+    //   left: 0px;
+    //   right: 0;
+    //   margin: 0 auto;
+    //   transform: rotate(-45deg);
+    //   background-image: url("");
+    //   background-size: contain;
+    // }
 
   }
 
@@ -63,6 +58,18 @@ nav {
   &__item {
     display: flex;
     align-items: center;
+
+    a {
+      color: #fff;
+    }
+
+    a:focus , a:hover {
+      background-color: unset;
+      color: #fff;
+      outline: none;
+      text-decoration: none;
+    }
+
   }
 
   &__item-desk {
@@ -79,8 +86,7 @@ nav {
       border-bottom: 3px solid transparent;
 
       &:hover {
-        border-bottom: 3px solid #f65111;
-        text-shadow: 6px 6px 5px #fff;
+        border-bottom: 3px solid #46caab;
       }
 
 
