@@ -51,6 +51,7 @@ header {
     min-height: 100vh;
     width: 100%;
     padding-bottom: 40px;
+    transition: 0.3s ease-in-out;
   }
 
   &__content {
@@ -70,7 +71,7 @@ header {
     }
 
     p {
-      font-family: $font-primary;
+      font-family: $font-header;
       font-weight: 400;
       color: #fff;
       font-size: 36px;

@@ -5,7 +5,7 @@
 /*  Import custom defined variables / mixins */
 /*Fonts Import*/
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Courgette");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700");
 @font-face {
   font-family: 'Conv_againts';
@@ -2253,7 +2253,7 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 300; }
 
 body {
@@ -2273,16 +2273,6 @@ body {
   width: 100%;
   margin: 0 auto;
   max-width: 1400px; }
-
-.react-parallax-bgimage {
-  height: 100% !important;
-  object-fit: cover; }
-
-.gg {
-  display: none; }
-
-.display-none {
-  opacity: 0; }
 
 /* Custom imports */
 ._block {
@@ -2416,7 +2406,7 @@ nav {
 
 .navbar__item-desk {
   color: #fff;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Lato", sans-serif; }
   .navbar__item-desk p {
     margin: 0;
     font-size: 1.2rem;
@@ -2584,7 +2574,8 @@ header {
   height: 100%;
   min-height: 100vh;
   width: 100%;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  transition: 0.3s ease-in-out; }
 
 .header__content {
   text-align: center;
@@ -2598,7 +2589,7 @@ header {
       .header__content h1 {
         font-size: 20vw; } }
   .header__content p {
-    font-family: "Montserrat", sans-serif;
+    font-family: cursive;
     font-weight: 400;
     color: #fff;
     font-size: 36px;

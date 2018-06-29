@@ -49,18 +49,7 @@ body {
   max-width: $site-container-max-width;
 }
 
-.react-parallax-bgimage {
-  height: 100% !important;
-  object-fit: cover;
-}
 
-.gg {
-  display: none;
-}
-
-.display-none {
-  opacity: 0;
-}
 
 /* Custom imports */
 @import "global/helper-classes";
