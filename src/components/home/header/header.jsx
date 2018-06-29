@@ -54,10 +54,12 @@ class Header extends Component  {
   nightLight = () => {
 
     if(this.state.isNightTime) {
+
+      this.setState({nightLight:true});
       this.leftEye.push("eyeLightNight");
       this.rightEye.push("eyeLightNight");
-      this.setState({nightLight:true});
       document.querySelector(".header__wrapper").style.background = "rgba(0, 0, 0, 0.56)";
+
     }
     else {
 
@@ -72,6 +74,7 @@ class Header extends Component  {
 
       this.setState({nightLight:false});
       document.querySelector(".header__wrapper").style.background = "none";
+
     }
 
 

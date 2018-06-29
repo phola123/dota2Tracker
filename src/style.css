@@ -2525,7 +2525,6 @@ a:focus {
   max-height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
   will-change: height , width; }
 
 #menu-toggle:checked + #trigger + #burger + #menu {
