@@ -12,6 +12,7 @@ class Section1 extends Component {
 
 
   render() {
+    console.log("called");
     return(
       <ScrollableAnchor id={'section1'}>
         <section>

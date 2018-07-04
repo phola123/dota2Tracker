@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 
 import coverLogo from '../../../assets/img/Site/logo.png';
 import bgImg from '../../../assets/img/Site/bg_02.jpg';
@@ -59,7 +59,9 @@ class Header extends Component  {
       this.leftEye.push("eyeLightNight");
       this.rightEye.push("eyeLightNight");
       document.querySelector(".header__wrapper").style.background = "rgba(0, 0, 0, 0.56)";
-
+      this.setState({
+        nightLight:true
+      });
     }
     else {
 
@@ -131,6 +133,12 @@ class Header extends Component  {
 
   componentDidMount() {
     this.nightLight();
+  }
+
+  componentDidUpdate() {
+    axios.get("https://api.opendota.com/api/heroes").then(response => {
+      console.log(response);
+    })
   }
 
   // Render Method

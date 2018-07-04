@@ -7,6 +7,14 @@ const NavbarMobile = () => {
       <label id="trigger" htmlFor="menu-toggle"></label>
       <label id="burger" htmlFor="menu-toggle"></label>
       <ul id="menu">
+
+        <li>
+          {/*Nav Item*/}
+          <div className="navbar__item-desk">
+            <p>Home</p>
+          </div>
+        </li>
+
         <li>
           {/*Nav Item*/}
           <div className="navbar__item-desk">

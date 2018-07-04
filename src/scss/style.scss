@@ -49,6 +49,13 @@ body {
   max-width: $site-container-max-width;
 }
 
+a:focus , a:hover {
+  background-color: unset;
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+}
+
 
 
 /* Custom imports */

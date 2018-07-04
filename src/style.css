@@ -2274,6 +2274,12 @@ body {
   margin: 0 auto;
   max-width: 1400px; }
 
+a:focus, a:hover {
+  background-color: unset;
+  color: #fff;
+  outline: none;
+  text-decoration: none; }
+
 /* Custom imports */
 ._block {
   float: left;
@@ -2398,11 +2404,6 @@ nav {
   align-items: center; }
   .navbar__item a {
     color: #fff; }
-  .navbar__item a:focus, .navbar__item a:hover {
-    background-color: unset;
-    color: #fff;
-    outline: none;
-    text-decoration: none; }
 
 .navbar__item-desk {
   color: #fff;
@@ -2445,7 +2446,7 @@ nav {
     width: 500px;
     height: 500px; } }
 
-li {
+.mobNav li {
   margin: 75px 0 -55px 0;
   color: #03A9F4;
   font: 14pt "Roboto", sans-serif;
@@ -2457,17 +2458,17 @@ li {
   outline: 0;
   display: none; }
 
-li {
+.mobNav li {
   width: 230px;
   text-indent: 56px; }
 
-a:focus {
+.mobNav a:focus {
   display: block;
   color: #333;
   background-color: #eee;
   transition: all .5s; }
 
-#trigger, #burger, #burger:before, #burger:after {
+.mobNav #trigger, .mobNav #burger, .mobNav #burger:before, .mobNav #burger:after {
   position: absolute;
   top: 25px;
   left: 25px;
@@ -2478,40 +2479,40 @@ a:focus {
   cursor: pointer;
   z-index: 1; }
 
-#trigger {
+.mobNav #trigger {
   height: 25px;
   background: none; }
 
-#burger:before {
+.mobNav #burger:before {
   content: " ";
   top: 10px;
   left: 0; }
 
-#burger:after {
+.mobNav #burger:after {
   content: " ";
   top: 20px;
   left: 0; }
 
-#menu-toggle:checked + #trigger + #burger {
+.mobNav #menu-toggle:checked + #trigger + #burger {
   top: 35px;
   transform: rotate(180deg);
   transition: transform .2s ease; }
 
-#menu-toggle:checked + #trigger + #burger:before {
+.mobNav #menu-toggle:checked + #trigger + #burger:before {
   width: 20px;
   top: -2px;
   left: 18px;
   transform: rotate(45deg) translateX(-5px);
   transition: transform .2s ease; }
 
-#menu-toggle:checked + #trigger + #burger:after {
+.mobNav #menu-toggle:checked + #trigger + #burger:after {
   width: 20px;
   top: 2px;
   left: 18px;
   transform: rotate(-45deg) translateX(-5px);
   transition: transform .5s ease; }
 
-#menu {
+.mobNav #menu {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -2527,14 +2528,14 @@ a:focus {
   background-position: center;
   will-change: height , width; }
 
-#menu-toggle:checked + #trigger + #burger + #menu {
+.mobNav #menu-toggle:checked + #trigger + #burger + #menu {
   animation: checked-anim 1s cubic-bezier(0.65, 0.05, 0.36, 1) both;
   background-image: url("assets/img/Site/coming__soon.jpg"); }
 
-#menu-toggle:checked + #trigger ~ #menu > li, a {
+.mobNav #menu-toggle:checked + #trigger ~ #menu > li, .mobNav a {
   display: block; }
 
-[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+.mobNav [type="checkbox"]:not(:checked), .mobNav [type="checkbox"]:checked {
   display: none; }
 
 header {
