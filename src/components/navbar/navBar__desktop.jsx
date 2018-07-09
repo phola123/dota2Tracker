@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import logo from "../../assets/img/Site/logo.png";
 
@@ -8,32 +8,33 @@ const NavbarDesktop = () => {
     <div className="navbar__container">
       {/*Logo Container*/}
 
-      <Link to="/">
+      <NavLink strict activeClassName="selected" to="/" >
       <div className="navbar__logo">
         <img src={logo} alt="logo" />
         <p>Dota Stalker</p>
       </div>
-    </Link>
+    </NavLink>
 
     <div className="navbar__item">
+
       {/*Nav Item*/}
       <div className="navbar__item-desk">
-        <Link to="meta"><p>Meta</p></Link>
+        <NavLink strict activeClassName="selected" to="heroes"><p>Heroes</p></NavLink>
       </div>
 
       {/*Nav Item*/}
       <div className="navbar__item-desk">
-        <Link to="matches"><p>Matches</p></Link>
+        <NavLink strict activeClassName="selected" to="meta"><p>Meta</p></NavLink>
       </div>
 
       {/*Nav Item*/}
       <div className="navbar__item-desk">
-        <Link to="heroes"><p>Heroes</p></Link>
+        <NavLink strict activeClassName="selected" to="matches"><p>Matches</p></NavLink>
       </div>
 
       {/*Nav Item*/}
       <div className="navbar__item-desk">
-        <Link to="records"><p>Records</p></Link>
+        <NavLink strict activeClassName="selected" to="records"><p>Records</p></NavLink>
       </div>
     </div>
   </div>

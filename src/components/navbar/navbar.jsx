@@ -30,7 +30,7 @@ class Navbar extends Component {
 
   // windows size checker
   checkWindowResize = () => {
-    let boolValue = null;
+    let boolValue = null; 
     if( window.innerWidth <= 991 ) {
       boolValue = true;
     }

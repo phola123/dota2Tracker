@@ -36,7 +36,7 @@ header {
 }
 
 .spacer__fixed {
-  height: 205px;
+  height: 90px;
 
   @include phone {
     height: 140px;
@@ -58,6 +58,7 @@ header {
     text-align: center;
     font-family: $font-logo;
     color: #46caab;
+    margin: 100px 0;
 
     h1 {
       margin: 1rem 0;

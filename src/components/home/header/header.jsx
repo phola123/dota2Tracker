@@ -135,12 +135,6 @@ class Header extends Component  {
     this.nightLight();
   }
 
-  componentDidUpdate() {
-    axios.get("https://api.opendota.com/api/heroes").then(response => {
-      console.log(response);
-    })
-  }
-
   // Render Method
 
   render(){

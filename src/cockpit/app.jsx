@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 // import components
 import Home from '../components/home/home';
 import Navbar from '../components/navbar/navbar';
-import Section1 from '../components/home/section/section1';
+import Heroes from '../components/heroes/heroes';
 
 //material Imports
 // import Button from '../material/material__components/CustomButtons/Button';
@@ -17,10 +17,10 @@ const App = () => {
       <Navbar/>
       {  /* Routes */ }
       <Route path="/" exact component={Home}></Route>
-      <Route path="/meta" exact component={Section1}></Route>
-      <Route path="/matches" exact ></Route>
-      <Route path="/heroes" exact></Route>
-      <Route path="/records" exact></Route>
+      <Route path="/heroes" component={Heroes}></Route>
+      <Route path="/meta"></Route>
+      <Route path="/matches"></Route>
+      <Route path="/records"></Route>
 
     </div>
   )

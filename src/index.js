@@ -15,4 +15,4 @@ ReactDom.render(
   </BrowserRouter>,
   document.querySelector("#root")
 
-)
+);

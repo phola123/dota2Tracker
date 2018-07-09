@@ -7,6 +7,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Courgette");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700");
+@import url(/assets/scss/material-kit-react.css);
 @font-face {
   font-family: 'Conv_againts';
   src: url("scss/fonts/againts.eot");
@@ -2565,7 +2566,7 @@ header {
       height: 110px; }
 
 .spacer__fixed {
-  height: 205px; }
+  height: 90px; }
   @media (max-width: 767px) {
     .spacer__fixed {
       height: 140px; } }
@@ -2580,7 +2581,8 @@ header {
 .header__content {
   text-align: center;
   font-family: "Conv_againts";
-  color: #46caab; }
+  color: #46caab;
+  margin: 100px 0; }
   .header__content h1 {
     margin: 1rem 0;
     font-size: 8rem;
@@ -2670,3 +2672,25 @@ header {
 .section__container {
   min-height: 100vh;
   position: relative; }
+
+.heroType {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px; }
+
+.heroTab {
+  transition: 0.3s cubic-bezier(1, -0.76, 0.29, 1.36); }
+
+.heroTab:hover {
+  transform: scale(1.5);
+  transform-origin: top; }
+
+.heroImg__container {
+  width: 130px;
+  height: 75px;
+  margin: 10px;
+  cursor: pointer; }
+  .heroImg__container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; }
