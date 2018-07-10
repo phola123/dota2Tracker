@@ -51,14 +51,8 @@
   }
   li {
     width: 230px;
-    text-indent: 56px;}
-    a:focus {
-      display: block;
-      color: #333;
-      background-color: #eee;
-      transition: all .5s;
-    }
-
+    text-indent: 56px;
+  }
 
     #trigger, #burger, #burger:before, #burger:after {
       position: absolute;

@@ -2463,12 +2463,6 @@ nav {
   width: 230px;
   text-indent: 56px; }
 
-.mobNav a:focus {
-  display: block;
-  color: #333;
-  background-color: #eee;
-  transition: all .5s; }
-
 .mobNav #trigger, .mobNav #burger, .mobNav #burger:before, .mobNav #burger:after {
   position: absolute;
   top: 25px;

@@ -19,22 +19,22 @@ const NavbarDesktop = () => {
 
     {/*Nav Item*/}
     <div className="navbar__item-desk">
-      <NavLink exact  to="/heroes">Heroes</NavLink>
+      <NavLink exact to="/heroes">Heroes</NavLink>
     </div>
 
     {/*Nav Item*/}
     <div className="navbar__item-desk">
-      <NavLink exact  to="/meta">Meta</NavLink>
+      <NavLink exact to="/meta">Meta</NavLink>
     </div>
 
     {/*Nav Item*/}
     <div className="navbar__item-desk">
-      <NavLink exact  to="/matches">Matches</NavLink>
+      <NavLink exact to="/matches">Matches</NavLink>
     </div>
 
     {/*Nav Item*/}
     <div className="navbar__item-desk">
-      <NavLink exact  to="/records">Records</NavLink>
+      <NavLink exact to="/records">Records</NavLink>
     </div>
   </div>
 </div>

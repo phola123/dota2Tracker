@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavbarMobile = () => {
   return (
@@ -11,28 +12,28 @@ const NavbarMobile = () => {
         <li>
           {/*Nav Item*/}
           <div className="navbar__item-desk">
-            <p>Home</p>
+            <NavLink exact to="/">Home</NavLink>
           </div>
         </li>
 
         <li>
           {/*Nav Item*/}
           <div className="navbar__item-desk">
-            <p>Meta</p>
+            <NavLink exact to="/heroes">Heroes</NavLink>
           </div>
         </li>
 
         <li>
           {/*Nav Item*/}
           <div className="navbar__item-desk">
-            <p>Matches</p>
+            <NavLink exact to="/matches">Matches</NavLink>
           </div>
         </li>
 
         <li>
           {/*Nav Item*/}
           <div className="navbar__item-desk">
-            <p>Records</p>
+            <NavLink exact to="/records">Records</NavLink>
           </div>
 
         </li>
@@ -41,7 +42,7 @@ const NavbarMobile = () => {
 
           {/*Nav Item*/}
           <div className="navbar__item-desk">
-            <p>Heroes</p>
+          <NavLink exact to="/meta">Meta</NavLink>
           </div>
         </li>
 
