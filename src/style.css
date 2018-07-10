@@ -2409,7 +2409,7 @@ nav {
 .navbar__item-desk {
   color: #fff;
   font-family: "Lato", sans-serif; }
-  .navbar__item-desk p {
+  .navbar__item-desk a {
     margin: 0;
     font-size: 1.2rem;
     cursor: pointer;
@@ -2417,7 +2417,7 @@ nav {
     padding: 20px 0 17px;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent; }
-    .navbar__item-desk p:hover {
+    .navbar__item-desk a:hover, .navbar__item-desk a.active {
       border-bottom: 3px solid #46caab; }
 
 @-webkit-keyframes checked-anim {

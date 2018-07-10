@@ -17,10 +17,10 @@ const App = () => {
       <Navbar/>
       {  /* Routes */ }
       <Route path="/" exact component={Home}></Route>
-      <Route path="/heroes" component={Heroes}></Route>
-      <Route path="/meta"></Route>
-      <Route path="/matches"></Route>
-      <Route path="/records"></Route>
+      <Route path="/heroes" exact component={Heroes}></Route>
+      <Route path="/meta" exact></Route>
+      <Route path="/matches" exact></Route>
+      <Route path="/records" exact></Route>
 
     </div>
   )
