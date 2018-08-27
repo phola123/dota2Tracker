@@ -20,11 +20,10 @@ class Heroes extends Component {
 
 
     // sorting by Name
-    compare = (a, b) => {
-        if (a.id && b.id) {
-            console.log(a, b);
-            const localized_nameA = a.localized_name.toUpperCase();
-            const localized_nameB = b.localized_name.toUpperCase();
+    compare = (firstHero, nextHero) => {
+
+            const localized_nameA = firstHero.localized_name.toUpperCase();
+            const localized_nameB = nextHero.localized_name.toUpperCase();
             let comparison = 0;
 
             if (localized_nameA > localized_nameB) {
@@ -33,7 +32,7 @@ class Heroes extends Component {
                 comparison = -1;
             }
             return comparison;
-        }
+
 
     }
 
@@ -51,8 +50,13 @@ class Heroes extends Component {
 
         axios.get(heroStatURL).then(
             response => {
-                console.log(response);
-                this.setState({heroStats: response.data.sort(this.compare)})
+
+                //filtering out garbage data api is returning
+                const heroState = response.data.filter( hero => hero.id );
+
+                //sorting out in alphabetical order
+                this.setState({heroStats: heroState.sort(this.compare)});
+
             }
         )
     }
@@ -61,7 +65,7 @@ class Heroes extends Component {
     render() {
 
         const HeroDetail = this.state.heroStats;
-
+        console.log(this.props);
 
         return (
             <div className="hero__wrapper">
@@ -70,7 +74,7 @@ class Heroes extends Component {
 
                     <div className="header__wrapper">
 
-                        <div className="spacer__fixed"></div>
+                        <div className="spacer__fixed" />
                         <div className="header__image">
                             <img src={HeroBg} alt="background"/>
                         </div>
