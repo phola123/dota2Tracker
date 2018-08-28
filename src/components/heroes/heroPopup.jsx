@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import * as appConstants from '../../store/constants/appConstant';
 import Popup from '../popups/popup';
 
 class HeroPopup extends Component {
@@ -13,7 +14,13 @@ class HeroPopup extends Component {
         return (
 
             <Popup open={this.props.open} close={this.props.close}>
-                <div className="name">{ this.props.heroData && this.props.heroData.localized_name}</div>
+                <div className="popHero__wrapper">
+                    <div className="popHero__imgContainer">
+                        <img src={appConstants.apiBase + this.props.heroData.img}
+                             alt={this.props.heroData.localized_name}/>
+                    </div>
+                    <div className="">{this.props.heroData.localized_name}</div>
+                </div>
             </Popup>
 
         )

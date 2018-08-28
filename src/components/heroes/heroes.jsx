@@ -148,12 +148,16 @@ class Heroes extends Component {
 
 
                 </header>
+                {
+                    this.state.heroData
+                    &&
+                    <HeroPopup
+                        open={this.state.popOpen}
+                        close={this.popCloseHandler}
+                        heroData={this.state.heroData}
+                    />
+                }
 
-                <HeroPopup
-                    open={this.state.popOpen}
-                    close={this.popCloseHandler}
-                    heroData = {this.state.heroData}
-                />
 
             </div>
 
