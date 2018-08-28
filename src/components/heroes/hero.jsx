@@ -3,18 +3,17 @@ import React from 'react';
 const Hero = (props) => {
 
 
- return (
+    return (
 
-   <div onClick={props.clickHandler} className="heroTab">
+        <div onClick={props.clickHandler} className="heroTab">
 
-     <div className="heroImg__container">
-       <img src={props.image} alt={props.localName}></img>
-     </div>
+            <div className="heroImg__container">
+                <img src={props.image} alt={props.localName}/>
+            </div>
 
-   </div>
+        </div>
 
- )
-
+    )
 
 
 }
