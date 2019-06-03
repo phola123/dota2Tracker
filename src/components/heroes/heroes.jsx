@@ -74,6 +74,7 @@ class Heroes extends Component {
                 //sorting out in alphabetical order
                 this.setState({heroStats: heroState.sort(this.compare)});
 
+                console.log(this.state.heroStats);
             }
         )
     }

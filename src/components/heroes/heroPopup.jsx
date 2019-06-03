@@ -10,7 +10,7 @@ class HeroPopup extends Component {
     };
 
     render() {
-        console.log(this.props);
+        console.log(this.props.heroData);
         return (
 
             <Popup open={this.props.open} close={this.props.close}>
@@ -19,7 +19,9 @@ class HeroPopup extends Component {
                         <img src={appConstants.apiBase + this.props.heroData.img}
                              alt={this.props.heroData.localized_name}/>
                     </div>
-                    <div className="">{this.props.heroData.localized_name}</div>
+                    <div className="">{
+                        console.log(Object.values(this.props.heroData).toString().split(','))
+                    }</div>
                 </div>
             </Popup>
 

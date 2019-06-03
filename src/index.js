@@ -16,3 +16,8 @@ ReactDom.render(
   document.querySelector("#root")
 
 );
+
+// hot module replacement
+if(module.hot) {
+    module.hot.accept();
+}
