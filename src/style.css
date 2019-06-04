@@ -2671,8 +2671,7 @@ header {
 .heroType {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 50px;
-  justify-content: center; }
+  margin-bottom: 50px; }
 
 .heroTab {
   transition: 0.2s ease; }
