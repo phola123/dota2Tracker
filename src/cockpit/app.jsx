@@ -12,7 +12,7 @@ import HeroDetails from '../components/heroes/heroDetails';
 
 const App = (props) => {
     const match = props.match;
-    console.log(match);
+    console.log(props);
     return (
         <div className="site__wrapper">
             {  /* Navbar */}
@@ -20,7 +20,7 @@ const App = (props) => {
             {  /* Routes */}
             <Route path="/" exact component={Home}></Route>
             <Route path="/heroes" exact component={Heroes}></Route>
-            <Route path="/heroes/hero" component={HeroDetails}></Route>
+            <Route path="/heroes/:hero" component={HeroDetails}></Route>
             <Route path="/meta" exact></Route>
             <Route path="/matches" exact></Route>
             <Route path="/records" exact></Route>

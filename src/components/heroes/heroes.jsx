@@ -88,8 +88,14 @@ class Heroes extends Component {
                                         HeroDetail.map((hero, index) => {
 
                                                 return hero.primary_attr === "str" &&
-                                                    <NavLink herodata={hero} key={hero.id}
-                                                             to={`/heroes/${globalFunctions.joinString(hero.localized_name)}`}>
+                                                    <NavLink key={hero.id}
+                                                             to={{
+                                                                 pathname: `/heroes/${globalFunctions.joinString(hero.localized_name)}`,
+                                                                 state: {
+                                                                     heroData: hero
+                                                                 }
+                                                             }}
+                                                    >
                                                         <Hero
                                                             image={appConstants.apiBase + hero.img}
                                                             localName={hero.localized_name}/>
@@ -105,7 +111,13 @@ class Heroes extends Component {
 
                                                 return hero.primary_attr === "agi" &&
                                                     <NavLink key={hero.id}
-                                                             to={`/heroes/${globalFunctions.joinString(hero.localized_name)}`}>
+                                                             to={{
+                                                                 pathname: `/heroes/${globalFunctions.joinString(hero.localized_name)}`,
+                                                                 state: {
+                                                                     heroData: hero
+                                                                 }
+                                                             }}
+                                                    >
                                                         <Hero
                                                             image={appConstants.apiBase + hero.img}
                                                             localName={hero.localized_name}/>
@@ -120,7 +132,13 @@ class Heroes extends Component {
 
                                                 return hero.primary_attr === "int" &&
                                                     <NavLink key={hero.id}
-                                                             to={`/heroes/${globalFunctions.joinString(hero.localized_name)}`}>
+                                                             to={{
+                                                                 pathname: `/heroes/${globalFunctions.joinString(hero.localized_name)}`,
+                                                                 state: {
+                                                                     heroData: hero
+                                                                 }
+                                                             }}
+                                                    >
                                                         <Hero
                                                             image={appConstants.apiBase + hero.img}
                                                             localName={hero.localized_name}/>
