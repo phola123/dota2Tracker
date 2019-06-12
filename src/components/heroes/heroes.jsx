@@ -3,8 +3,11 @@ import React, {Component} from 'react';
 import * as appConstants from '../../store/constants/appConstant';
 
 import Hero from '../heroes/hero';
-import HeroPopup from './heroPopup';
 import axios from 'axios';
+
+import {NavLink} from 'react-router-dom';
+
+import globalFunctions from '../shared/global-functions';
 
 import HeroBg from '../../assets/img/Site/heroBg.jpg';
 
@@ -16,8 +19,7 @@ class Heroes extends Component {
         this.state = {
 
             heroStats: [],
-            heroData: null,
-            popOpen: false
+            heroData: null
 
         };
     }
@@ -39,26 +41,6 @@ class Heroes extends Component {
 
 
     }
-
-    //popUpclose Handler
-
-    popCloseHandler = () => {
-        this.setState({
-            popOpen: false
-        });
-    }
-
-    // Hero Click Event
-
-    heroClickHandler = (hero) => {
-        console.log(hero);
-        this.setState({
-            popOpen: true,
-            heroData: hero
-        });
-
-    }
-
 
     // Lifecycle Hooks
     componentDidMount() {
@@ -106,9 +88,12 @@ class Heroes extends Component {
                                         HeroDetail.map((hero, index) => {
 
                                                 return hero.primary_attr === "str" &&
-                                                    <Hero clickHandler={() => this.heroClickHandler(hero)} key={hero.id}
-                                                          image={appConstants.apiBase + hero.img}
-                                                          localName={hero.localized_name}/>
+                                                    <NavLink herodata={hero} key={hero.id}
+                                                             to={`/heroes/${globalFunctions.joinString(hero.localized_name)}`}>
+                                                        <Hero
+                                                            image={appConstants.apiBase + hero.img}
+                                                            localName={hero.localized_name}/>
+                                                    </NavLink>
 
                                             }
                                         )
@@ -119,10 +104,12 @@ class Heroes extends Component {
                                         HeroDetail.map((hero, index) => {
 
                                                 return hero.primary_attr === "agi" &&
-                                                    <Hero clickHandler={() => this.heroClickHandler(hero)} key={hero.id}
-                                                          image={appConstants.apiBase + hero.img}
-                                                          localName={hero.localized_name}/>
-
+                                                    <NavLink key={hero.id}
+                                                             to={`/heroes/${globalFunctions.joinString(hero.localized_name)}`}>
+                                                        <Hero
+                                                            image={appConstants.apiBase + hero.img}
+                                                            localName={hero.localized_name}/>
+                                                    </NavLink>
                                             }
                                         )
                                     }
@@ -132,9 +119,12 @@ class Heroes extends Component {
                                         HeroDetail.map((hero, index) => {
 
                                                 return hero.primary_attr === "int" &&
-                                                    <Hero clickHandler={() => this.heroClickHandler(hero)} key={hero.id}
-                                                          image={appConstants.apiBase + hero.img}
-                                                          localName={hero.localized_name}/>
+                                                    <NavLink key={hero.id}
+                                                             to={`/heroes/${globalFunctions.joinString(hero.localized_name)}`}>
+                                                        <Hero
+                                                            image={appConstants.apiBase + hero.img}
+                                                            localName={hero.localized_name}/>
+                                                    </NavLink>
 
                                             }
                                         )
@@ -149,16 +139,6 @@ class Heroes extends Component {
 
 
                 </header>
-                {
-                    this.state.heroData
-                    &&
-                    <HeroPopup
-                        open={this.state.popOpen}
-                        close={this.popCloseHandler}
-                        heroData={this.state.heroData}
-                    />
-                }
-
 
             </div>
 

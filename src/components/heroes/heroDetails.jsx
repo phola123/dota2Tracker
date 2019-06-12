@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import * as appConstants from '../../store/constants/appConstant';
-import Popup from '../popups/popup';
 
-class HeroPopup extends Component {
+class HeroDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -12,7 +11,6 @@ class HeroPopup extends Component {
         console.log(this.props.heroData);
         return (
 
-            <Popup open={this.props.open} close={this.props.close}>
                 <div className="popHero__wrapper">
                     <div className="popHero__imgContainer">
                         <img src={appConstants.apiBase + this.props.heroData.img}
@@ -36,7 +34,6 @@ class HeroPopup extends Component {
                     </div>
 
                 </div>
-            </Popup>
 
         )
 
@@ -45,4 +42,4 @@ class HeroPopup extends Component {
 
 }
 
-export default HeroPopup;
+export default HeroDetails;
