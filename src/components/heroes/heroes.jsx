@@ -27,8 +27,7 @@ class Heroes extends Component {
 
     }
 
-    //search dummy
-
+    //search function
     search = (e) => {
 
         if (e.keyCode >= 65 && e.keyCode <= 90) {
@@ -53,18 +52,14 @@ class Heroes extends Component {
 
     }
 
-    // Filter search
-
+    // Filter search name function (passed to search function in filter method)
     byNameFilter = (heroData) => {
         const heroName = heroData.localized_name.toLowerCase();
 
-        const isMatched = heroName.startsWith(this.searchString);
+        return heroName.startsWith(this.searchString);
+    };
 
-        return isMatched;
-
-    }
-
-    // sorting by Name
+    // sorting by Name function (passed to compare method in api call)
     compare = (firstHero, nextHero) => {
 
         const localized_nameA = firstHero.localized_name.toUpperCase();
