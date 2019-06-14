@@ -19,11 +19,50 @@ class Heroes extends Component {
         this.state = {
 
             heroStats: [],
-            heroData: null
-
+            heroData: null,
+            heroFiltered: null
         };
+
+        this.searchString = '';
+
     }
 
+    //search dummy
+
+    search = (e) => {
+
+        if (e.keyCode >= 65 && e.keyCode <= 90) {
+            this.searchString = this.searchString + e.key;
+            this.searchString && console.log(this.searchString);
+
+            this.setState({
+                heroFiltered: this.state.heroStats.filter(hero => this.byNameFilter(hero))
+            });
+
+        } else if (e.keyCode === 8) {
+            if (this.searchString === '') {
+
+            } else {
+                this.searchString = this.searchString.slice(0, -1);
+                this.setState({
+                    heroFiltered: this.state.heroStats.filter(hero => this.byNameFilter(hero))
+                })
+            }
+
+        }
+
+    }
+
+    // Filter search
+
+    byNameFilter = (heroData) => {
+        const heroName = heroData.localized_name.toLowerCase();
+
+        const isMatched = heroName.startsWith(this.searchString);
+
+        return isMatched;
+
+    }
 
     // sorting by Name
     compare = (firstHero, nextHero) => {
@@ -44,6 +83,9 @@ class Heroes extends Component {
 
     // Lifecycle Hooks
     componentDidMount() {
+        //search init
+        window.addEventListener('keyup', this.search);
+
         //Api Calls
         const heroStatURL = appConstants.heroApi;
 
@@ -61,11 +103,15 @@ class Heroes extends Component {
         )
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('keyup', this.search);
+    }
+
     // Render Method
     render() {
 
-        const HeroDetail = this.state.heroStats;
-        console.log(this.props);
+        const HeroDetail = this.state.heroFiltered ? this.state.heroFiltered : this.state.heroStats;
+        // console.log(this.props);
 
         return (
             <div className="hero__wrapper">
