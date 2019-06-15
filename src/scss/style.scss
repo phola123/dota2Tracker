@@ -60,9 +60,9 @@ a:focus , a:hover {
 
 /* Custom imports */
 @import "global/helper-classes";
-@import "Component/navBar__desk";
-@import "Component/navBar_mob";
-@import "Component/header";
-@import "Component/home__section";
-@import "Component/heroes";
+@import "component/navBar__desk";
+@import "component/navBar_mob";
+@import "component/header";
+@import "component/home__section";
+@import "component/heroes";
 @import "/assets/scss/material-kit-react.css";
