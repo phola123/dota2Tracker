@@ -54,7 +54,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "build-css": "node-sass --include-path scss src/scss/style.scss   src/style.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\" "
+    "watch-css": "nodemon -e scss -x \"npm run build-css\" ",
+    "heroku-prebuild": "npm install --dev"
   },
   "jest": {
     "collectCoverageFrom": [
