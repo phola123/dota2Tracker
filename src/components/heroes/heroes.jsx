@@ -62,7 +62,7 @@ class Heroes extends Component {
                 const heroFiltered = document.querySelector('.filtered');
                 if (heroFiltered) {
                     const ele = heroFiltered.offsetTop - 100;
-                    $('html, body').animate({scrollTop: ele}, 100);
+                    $('html, body').animate({scrollTop: ele}, 500);
                     clearTimeout(time);
                 }
             }, 100);
