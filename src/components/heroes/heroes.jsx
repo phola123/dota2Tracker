@@ -102,9 +102,8 @@ class Heroes extends Component {
         window.addEventListener('keyup', this.search);
 
         //Api Calls
-        const heroStatURL = appConstants.heroApi;
 
-        axios.get(heroStatURL).then(
+        axios.get(appConstants.heroApi).then(
             response => {
 
                 //filtering out garbage data api is returning
@@ -112,8 +111,7 @@ class Heroes extends Component {
 
                 //sorting out in alphabetical order
                 this.setState({heroStats: heroState.sort(this.compare)});
-
-                console.log(this.state.heroStats);
+;
             }
         )
     }
@@ -146,7 +144,7 @@ class Heroes extends Component {
 
                                 <div className="heroType strHero">
                                     {
-                                        HeroDetail.map((hero, index) => {
+                                        HeroDetail.map((hero) => {
 
                                                 return hero.primary_attr === "str" &&
                                                     <NavLink key={hero.id}
@@ -169,7 +167,7 @@ class Heroes extends Component {
                                 </div>
                                 <div className="heroType agiHero">
                                     {
-                                        HeroDetail.map((hero, index) => {
+                                        HeroDetail.map((hero) => {
 
                                                 return hero.primary_attr === "agi" &&
                                                     <NavLink key={hero.id}
@@ -191,7 +189,7 @@ class Heroes extends Component {
                                 </div>
                                 <div className="heroType intHero">
                                     {
-                                        HeroDetail.map((hero, index) => {
+                                        HeroDetail.map((hero) => {
 
                                                 return hero.primary_attr === "int" &&
                                                     <NavLink key={hero.id}
