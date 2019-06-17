@@ -2675,6 +2675,9 @@ header {
 
 .heroTab {
   transition: 0.2s ease; }
+  .heroTab.greyed {
+    filter: grayscale(1);
+    pointer-events: none; }
 
 @media (min-width: 768px) {
   .heroTab:hover {

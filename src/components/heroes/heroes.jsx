@@ -10,6 +10,7 @@ import {NavLink} from 'react-router-dom';
 import globalFunctions from '../shared/global-functions';
 
 import HeroBg from '../../assets/img/Site/heroBg.jpg';
+import * as $ from 'jquery';
 
 class Heroes extends Component {
 
@@ -20,7 +21,6 @@ class Heroes extends Component {
 
             heroStats: [],
             heroData: null,
-            heroFiltered: null
         };
 
         this.searchString = '';
@@ -35,7 +35,7 @@ class Heroes extends Component {
             this.searchString && console.log(this.searchString);
 
             this.setState({
-                heroFiltered: this.state.heroStats.filter(hero => this.byNameFilter(hero))
+                heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
             });
 
         } else if (e.keyCode === 8) {
@@ -44,7 +44,7 @@ class Heroes extends Component {
             } else {
                 this.searchString = this.searchString.slice(0, -1);
                 this.setState({
-                    heroFiltered: this.state.heroStats.filter(hero => this.byNameFilter(hero))
+                    heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
                 })
             }
 
@@ -55,8 +55,28 @@ class Heroes extends Component {
     // Filter search name function (passed to search function in filter method)
     byNameFilter = (heroData) => {
         const heroName = heroData.localized_name.toLowerCase();
+        if (heroName.startsWith(this.searchString)) {
 
-        return heroName.startsWith(this.searchString);
+            heroData.isHero = 'filtered';
+            const time = setTimeout(() => {
+                const heroFiltered = document.querySelector('.filtered');
+                if (heroFiltered) {
+                    const ele = heroFiltered.offsetTop - 100;
+                    $('html, body').animate({scrollTop: ele}, 100);
+                    clearTimeout(time);
+                }
+            }, 100);
+
+        } else {
+            heroData.isHero = 'greyed';
+        }
+
+        if (this.searchString === '') {
+            heroData.isHero = '';
+        }
+
+        return heroData;
+        // return ;
     };
 
     // sorting by Name function (passed to compare method in api call)
@@ -105,7 +125,7 @@ class Heroes extends Component {
     // Render Method
     render() {
 
-        const HeroDetail = this.state.heroFiltered ? this.state.heroFiltered : this.state.heroStats;
+        const HeroDetail = this.state.heroStats;
         // console.log(this.props);
 
         return (
@@ -138,6 +158,7 @@ class Heroes extends Component {
                                                              }}
                                                     >
                                                         <Hero
+                                                            hero={hero}
                                                             image={appConstants.apiBase + hero.img}
                                                             localName={hero.localized_name}/>
                                                     </NavLink>
@@ -160,6 +181,7 @@ class Heroes extends Component {
                                                              }}
                                                     >
                                                         <Hero
+                                                            hero={hero}
                                                             image={appConstants.apiBase + hero.img}
                                                             localName={hero.localized_name}/>
                                                     </NavLink>
@@ -167,7 +189,7 @@ class Heroes extends Component {
                                         )
                                     }
                                 </div>
-                                <div className="heroType inlHero">
+                                <div className="heroType intHero">
                                     {
                                         HeroDetail.map((hero, index) => {
 
@@ -181,6 +203,7 @@ class Heroes extends Component {
                                                              }}
                                                     >
                                                         <Hero
+                                                            hero={hero}
                                                             image={appConstants.apiBase + hero.img}
                                                             localName={hero.localized_name}/>
                                                     </NavLink>

@@ -6,6 +6,16 @@
 
 .heroTab {
   transition: 0.2s ease;
+
+  &.filter {
+
+  }
+
+  &.greyed {
+    filter: grayscale(1);
+    pointer-events: none;
+  }
+
 }
 
 .heroTab:hover {
