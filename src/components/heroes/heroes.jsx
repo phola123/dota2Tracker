@@ -95,10 +95,17 @@ class Heroes extends Component {
 
     }
 
+    //open keyboard on mobile phones
+
+    openKeyboard = () => {
+        document.querySelector('.searchBar').focus();
+    }
+
     // Lifecycle Hooks
     componentDidMount() {
         //search init
         window.addEventListener('keyup', this.search);
+        document.querySelector('.labelSearch').addEventListener('click', this.openKeyboard);
 
         //Api Calls
 
@@ -132,6 +139,14 @@ class Heroes extends Component {
                     <div className="heroHeader__wrapper">
 
                         <div className="spacer__fixed"/>
+
+                        <div className="search__mobile">
+                            <input type="checkbox" id="search"/>
+                            <input type='text' className="searchBar"/>
+                            <label className="labelSearch" htmlFor="search">
+                                <i className="fa fa-search" aria-hidden="true"/>
+                            </label>
+                        </div>
 
                         <div className="application-container">
 
