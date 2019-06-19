@@ -21,6 +21,10 @@
 
 .mobNav {
 
+  @include above__phone {
+    display: none;
+  }
+
   li {
     margin: 75px 0 -55px 0;
     color: #03A9F4;

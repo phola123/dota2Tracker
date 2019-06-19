@@ -2383,6 +2383,9 @@ nav {
   padding: 10px 10px;
   background-color: rgba(31, 40, 51, 0.8);
   position: relative; }
+  @media (max-width: 767px) {
+    .navbar__container {
+      display: none; } }
 
 .navbar__logo {
   display: flex;
@@ -2433,6 +2436,10 @@ nav {
   0% {
     width: 500px;
     height: 500px; } }
+
+@media (min-width: 768px) {
+  .mobNav {
+    display: none; } }
 
 .mobNav li {
   margin: 75px 0 -55px 0;

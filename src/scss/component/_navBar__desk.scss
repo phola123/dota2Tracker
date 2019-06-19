@@ -15,6 +15,11 @@ nav {
     background-color: rgba(31, 40, 51, 0.8);
     position: relative;
 
+
+    @include phone {
+      display: none;
+    }
+
     // &:after {
     //   content: "";
     //   display: block;
