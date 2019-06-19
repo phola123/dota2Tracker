@@ -20,7 +20,6 @@ class Heroes extends Component {
 
             heroStats: [],
             heroData: null,
-            mobSearchString: null
         };
 
         this.searchString = '';
@@ -59,14 +58,11 @@ class Heroes extends Component {
     }
 
     //mob search
-
     mobSearch = e => {
-        console.log(e.target.value);
         this.searchString = e.target.value;
         this.setState({
-            mobSearchString: e.target.value
+            heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
         });
-        // console.log(this.state.mobSearchString)
     }
 
 
