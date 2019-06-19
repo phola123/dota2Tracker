@@ -9,7 +9,6 @@ import {NavLink} from 'react-router-dom';
 
 import globalFunctions from '../shared/global-functions';
 
-import HeroBg from '../../assets/img/site/heroBg.jpg';
 import * as $ from 'jquery';
 
 class Heroes extends Component {
