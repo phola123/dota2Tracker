@@ -98,7 +98,7 @@ class Heroes extends Component {
     //open keyboard on mobile phones
 
     openKeyboard = () => {
-        document.querySelector('.searchBar').focus();
+        document.querySelector('.searchBar').focus().click();
     }
 
     // Lifecycle Hooks
