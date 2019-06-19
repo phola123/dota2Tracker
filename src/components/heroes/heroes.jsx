@@ -87,8 +87,7 @@ class Heroes extends Component {
         // if (heroName.startsWith(this.searchString)) {
         // if (heroName.indexOf(this.searchString) === 0) {
         // if (heroName.test(this.searchString)) {
-        alert(this.searchString);
-        if (startsWith(heroName, this.searchString)) {
+        if (startsWith(heroName, this.searchString.toLowerCase())) {
             heroData.isHero = 'filtered';
             const time = setTimeout(() => {
                 const heroFiltered = document.querySelector('.filtered');
