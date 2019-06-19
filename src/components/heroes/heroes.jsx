@@ -61,11 +61,15 @@ class Heroes extends Component {
 
     //mob search
     mobSearch = e => {
-        // console.log(typeof (e.target.value));
-        // this.searchString = (e.target.value).toString();
-        // this.setState({
-        //     heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
-        // });
+        const ua = navigator.userAgent.toLowerCase();
+        const isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+        if (isAndroid) {
+            // console.log(typeof (e.target.value));
+            this.searchString = (e.target.value).toString();
+            this.setState({
+                heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
+            });
+        }
 
         // this.timeout = setTimeout(() => {n
         //     this.searchString = '';
