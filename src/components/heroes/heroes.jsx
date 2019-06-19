@@ -9,7 +9,7 @@ import {NavLink} from 'react-router-dom';
 
 import globalFunctions from '../shared/global-functions';
 
-import HeroBg from '../../assets/img/Site/heroBg.jpg';
+import HeroBg from '../../assets/img/site/heroBg.jpg';
 import * as $ from 'jquery';
 
 class Heroes extends Component {
@@ -62,7 +62,7 @@ class Heroes extends Component {
                 const heroFiltered = document.querySelector('.filtered');
                 if (heroFiltered) {
                     const ele = heroFiltered.offsetTop - 100;
-                    $('html, body').animate({scrollTop: ele}, 500);
+                    $('html, body').stop().animate({scrollTop: ele}, 500);
                     clearTimeout(time);
                 }
             }, 100);
@@ -111,7 +111,6 @@ class Heroes extends Component {
 
                 //sorting out in alphabetical order
                 this.setState({heroStats: heroState.sort(this.compare)});
-;
             }
         )
     }
@@ -131,12 +130,9 @@ class Heroes extends Component {
 
                 <header>
 
-                    <div className="header__wrapper">
+                    <div className="heroHeader__wrapper">
 
                         <div className="spacer__fixed"/>
-                        <div className="header__image">
-                            <img src={HeroBg} alt="background"/>
-                        </div>
 
                         <div className="application-container">
 
@@ -211,6 +207,10 @@ class Heroes extends Component {
                                     }
                                 </div>
 
+                            </div>
+
+                            <div className={this.searchString !== '' ? 'search__query searching' : 'search__query'}>
+                                {this.searchString && this.searchString}
                             </div>
 
                         </div>

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import coverLogo from '../../../assets/img/Site/logo.png';
-import bgImg from '../../../assets/img/Site/bg_02.jpg';
-import bgImg2 from '../../../assets/img/Site/bg-01.jpg';
-import dotaDown from '../../../assets/img/Site/logo2.png'
+import coverLogo from '../../../assets/img/site/logo.png';
+import bgImg from '../../../assets/img/site/bg_02.jpg';
+import bgImg2 from '../../../assets/img/site/bg-01.jpg';
+import dotaDown from '../../../assets/img/site/logo2.png'
 
 class Header extends Component  {
   constructor(props) {

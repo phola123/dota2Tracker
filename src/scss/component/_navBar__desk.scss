@@ -37,7 +37,7 @@ nav {
     align-items: center;
 
     img {
-      max-width: 85px;
+      max-width: 60px;
       margin-right: 10px;
     }
 
@@ -46,7 +46,7 @@ nav {
       font-family: $font-logo;
       letter-spacing: 5px;
       color: #46caab;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       font-style: italic;
       margin-right: 30px;
@@ -78,10 +78,9 @@ nav {
       transition: 0.3s ease;
       border-bottom: 3px solid transparent;
 
-      &:hover,&.active {
+      &:hover, &.active {
         border-bottom: 3px solid #46caab;
       }
-
 
 
     }
