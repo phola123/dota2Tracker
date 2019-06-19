@@ -29,7 +29,7 @@ class Heroes extends Component {
     //search function
     search = (e) => {
         clearTimeout(this.timeout);
-        if ((e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode == 32) {
+        if ((e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode === 32) {
             this.searchString = this.searchString + e.key;
             this.searchString && console.log(this.searchString);
 
