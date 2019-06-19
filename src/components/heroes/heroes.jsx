@@ -20,6 +20,7 @@ class Heroes extends Component {
 
             heroStats: [],
             heroData: null,
+            mobSearchString: null
         };
 
         this.searchString = '';
@@ -31,7 +32,7 @@ class Heroes extends Component {
         // clearTimeout(this.timeout);
         if ((e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode === 32) {
             this.searchString = this.searchString + e.key;
-            this.searchString && console.log(this.searchString);
+            // this.searchString && console.log(this.searchString);
 
             this.setState({
                 heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
@@ -55,6 +56,17 @@ class Heroes extends Component {
         //     })
         // }, 800)
 
+    }
+
+    //mob search
+
+    mobSearch = e => {
+        console.log(e.target.value);
+        this.searchString = e.target.value;
+        this.setState({
+            mobSearchString: e.target.value
+        });
+        // console.log(this.state.mobSearchString)
     }
 
 
@@ -150,7 +162,7 @@ class Heroes extends Component {
 
                         <div className="search__mobile">
                             <input type="checkbox" id="search"/>
-                            <input type='text' onChange={(e) => this.searchString = e.target.value}
+                            <input type='text' onChange={this.mobSearch}
                                    className="searchBar"/>
                             <label className="labelSearch" htmlFor="search">
                                 <i className="fa fa-search" aria-hidden="true"/>
