@@ -8,6 +8,7 @@ import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 
 import globalFunctions from '../shared/global-functions';
+import startsWith from 'lodash.startswith'
 
 import * as $ from 'jquery';
 
@@ -80,8 +81,9 @@ class Heroes extends Component {
     byNameFilter = (heroData) => {
         const heroName = heroData.localized_name.toLowerCase();
         // if (heroName.startsWith(this.searchString)) {
-        if (heroName.indexOf(this.searchString) === 0) {
-            // if (heroName.test(this.searchString)) {
+        // if (heroName.indexOf(this.searchString) === 0) {
+        // if (heroName.test(this.searchString)) {
+        if (startsWith(heroName, this.searchString)) {
             heroData.isHero = 'filtered';
             const time = setTimeout(() => {
                 const heroFiltered = document.querySelector('.filtered');
@@ -93,7 +95,8 @@ class Heroes extends Component {
             }, 100);
 
         } else {
-            heroData.isHero = 'greyed';
+            heroData
+                .isHero = 'greyed';
         }
 
         if (this.searchString === '') {
@@ -101,11 +104,11 @@ class Heroes extends Component {
         }
 
         return heroData;
-        // return ;
+// return ;
     }
     ;
 
-    // sorting by Name function (passed to compare method in api call)
+// sorting by Name function (passed to compare method in api call)
     compare = (firstHero, nextHero) => {
 
         const localized_nameA = firstHero.localized_name.toUpperCase();
@@ -122,14 +125,14 @@ class Heroes extends Component {
 
     }
 
-    //open keyboard on mobile phones
+//open keyboard on mobile phones
 
     openKeyboard = () => {
         document.querySelector('.searchBar').focus();
         document.querySelector('.searchBar').click();
     }
 
-    // Lifecycle Hooks
+// Lifecycle Hooks
     componentDidMount() {
         //search init
         window.addEventListener('keyup', this.search);
@@ -153,7 +156,7 @@ class Heroes extends Component {
         window.removeEventListener('keyup', this.search);
     }
 
-    // Render Method
+// Render Method
     render() {
 
         const HeroDetail = this.state.heroStats;

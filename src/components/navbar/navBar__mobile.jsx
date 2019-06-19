@@ -5,8 +5,8 @@ const NavbarMobile = () => {
   return (
     <div className="mobNav">
       <input type="checkbox" id="menu-toggle"/>
-      <label id="trigger" htmlFor="menu-toggle"></label>
-      <label id="burger" htmlFor="menu-toggle"></label>
+      <label className="mobTrigger" id="trigger" htmlFor="menu-toggle"></label>
+      <label className="mobTrigger" id="burger" htmlFor="menu-toggle"></label>
       <ul id="menu">
 
         <li>
