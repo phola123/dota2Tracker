@@ -60,13 +60,13 @@ class Heroes extends Component {
 
     //mob search
     mobSearch = e => {
-        console.log(typeof (e.target.value));
-        this.searchString = (e.target.value).toString();
-        this.setState({
-            heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
-        });
+        // console.log(typeof (e.target.value));
+        // this.searchString = (e.target.value).toString();
+        // this.setState({
+        //     heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
+        // });
 
-        // this.timeout = setTimeout(() => {
+        // this.timeout = setTimeout(() => {n
         //     this.searchString = '';
         //     this.setState({
         //         heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
@@ -80,7 +80,8 @@ class Heroes extends Component {
     byNameFilter = (heroData) => {
         const heroName = heroData.localized_name.toLowerCase();
         // if (heroName.startsWith(this.searchString)) {
-        if (heroName.indexOf(this.searchString) === 0) {
+        // if (heroName.indexOf(this.searchString) === 0) {
+        if (heroName.test(this.searchString)) {
             heroData.isHero = 'filtered';
             const time = setTimeout(() => {
                 const heroFiltered = document.querySelector('.filtered');
@@ -101,7 +102,8 @@ class Heroes extends Component {
 
         return heroData;
         // return ;
-    };
+    }
+    ;
 
     // sorting by Name function (passed to compare method in api call)
     compare = (firstHero, nextHero) => {
