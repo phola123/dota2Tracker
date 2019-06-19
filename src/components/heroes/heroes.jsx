@@ -23,12 +23,12 @@ class Heroes extends Component {
         };
 
         this.searchString = '';
-        // this.timeout = null;
+        this.timeout = null;
     }
 
     //search function
     search = (e) => {
-        // clearTimeout(this.timeout);
+        clearTimeout(this.timeout);
         if ((e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode === 32) {
             this.searchString = this.searchString + e.key;
             // this.searchString && console.log(this.searchString);
@@ -48,12 +48,13 @@ class Heroes extends Component {
             }
 
         }
-        // this.timeout = setTimeout(() => {
-        //     this.searchString = '';
-        //     this.setState({
-        //         heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
-        //     })
-        // }, 800)
+        this.timeout = setTimeout(() => {
+            clearTimeout(this.timeout);
+            this.searchString = '';
+            this.setState({
+                heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
+            })
+        }, 3000);
 
     }
 
@@ -63,6 +64,14 @@ class Heroes extends Component {
         this.setState({
             heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
         });
+
+        this.timeout = setTimeout(() => {
+            this.searchString = '';
+            this.setState({
+                heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
+            })
+        }, 3000);
+
     }
 
 
