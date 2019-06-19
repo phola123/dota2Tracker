@@ -80,8 +80,8 @@ class Heroes extends Component {
     byNameFilter = (heroData) => {
         const heroName = heroData.localized_name.toLowerCase();
         // if (heroName.startsWith(this.searchString)) {
-        // if (heroName.indexOf(this.searchString) === 0) {
-        if (heroName.test(this.searchString)) {
+        if (heroName.indexOf(this.searchString) === 0) {
+            // if (heroName.test(this.searchString)) {
             heroData.isHero = 'filtered';
             const time = setTimeout(() => {
                 const heroFiltered = document.querySelector('.filtered');
