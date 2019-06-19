@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import sectionImg from '../../../assets/img/Site/sec1.jpg';
+import sectionImg from '../../../assets/img/site/sec1.jpg';
 
 import ScrollableAnchor , { configureAnchors } from 'react-scrollable-anchor'
 configureAnchors({offset:60, scrollDuration: 800, keepLastAnchorHash:false});

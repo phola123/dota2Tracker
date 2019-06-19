@@ -11,8 +11,6 @@ import HeroDetails from '../components/heroes/heroDetails';
 // import Button from '../material/material__components/CustomButtons/Button';
 
 const App = (props) => {
-    const match = props.match;
-    console.log(props);
     return (
         <div className="site__wrapper">
             {  /* Navbar */}

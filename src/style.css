@@ -2388,14 +2388,14 @@ nav {
   display: flex;
   align-items: center; }
   .navbar__logo img {
-    max-width: 85px;
+    max-width: 60px;
     margin-right: 10px; }
   .navbar__logo p {
     margin: 0;
     font-family: "Conv_againts";
     letter-spacing: 5px;
     color: #46caab;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     font-style: italic;
     margin-right: 30px;
@@ -2421,15 +2421,6 @@ nav {
     .navbar__item-desk a:hover, .navbar__item-desk a.active {
       border-bottom: 3px solid #46caab; }
 
-@-webkit-keyframes checked-anim {
-  50% {
-    width: 115px;
-    height: 115px; }
-  100% {
-    width: 100vw;
-    height: 100vh;
-    overflow-y: auto; } }
-
 @keyframes checked-anim {
   50% {
     width: 100vw;
@@ -2437,11 +2428,6 @@ nav {
   100% {
     width: 100vw;
     height: 100vh; } }
-
-@-webkit-keyframes not-checked-anim {
-  0% {
-    width: 500px;
-    height: 500px; } }
 
 @keyframes not-checked-anim {
   0% {
@@ -2522,11 +2508,12 @@ nav {
   max-height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
-  will-change: height , width; }
+  will-change: height, width;
+  background-image: url("assets/img/site/coming__soon.jpg"); }
 
 .mobNav #menu-toggle:checked + #trigger + #burger + #menu {
   animation: checked-anim 1s cubic-bezier(0.65, 0.05, 0.36, 1) both;
-  background-image: url("assets/img/Site/coming__soon.jpg"); }
+  border-bottom-right-radius: 0; }
 
 .mobNav #menu-toggle:checked + #trigger ~ #menu > li, .mobNav a {
   display: block; }
@@ -2561,7 +2548,7 @@ header {
       height: 110px; }
 
 .spacer__fixed {
-  height: 90px; }
+  height: 69px; }
   @media (max-width: 767px) {
     .spacer__fixed {
       height: 140px; } }
@@ -2671,10 +2658,45 @@ header {
 .heroType {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 50px; }
+  margin: 25px 0; }
+  @media (max-width: 991px) {
+    .heroType {
+      justify-content: center; } }
+
+.heroHeader__wrapper {
+  transition: 0.3s ease-in-out;
+  background: url("assets/img/site/heroBg.jpg");
+  height: 100%;
+  background-size: contain;
+  background-repeat: repeat; }
+
+.search__query {
+  position: fixed;
+  bottom: 0;
+  z-index: 11;
+  background: white;
+  padding: 5px 15px;
+  max-width: 400px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  transition: 0.5s ease;
+  transform: translateY(50px);
+  border-radius: 10px;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Conv_againts";
+  letter-spacing: 10px; }
+  .search__query.searching {
+    transform: translateY(0); }
 
 .heroTab {
   transition: 0.2s ease; }
+  .heroTab.greyed {
+    filter: grayscale(1);
+    pointer-events: none; }
 
 @media (min-width: 768px) {
   .heroTab:hover {
@@ -2682,11 +2704,11 @@ header {
     transform-origin: center; } }
 
 .heroImg__container {
-  width: 80px;
-  height: auto;
+  width: 150px;
+  height: 90px;
   margin: 10px;
   cursor: pointer; }
   .heroImg__container img {
     width: 100%;
     height: 100%;
-    object-fit: contain; }
+    object-fit: cover; }

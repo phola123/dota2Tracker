@@ -36,7 +36,7 @@ header {
 }
 
 .spacer__fixed {
-  height: 90px;
+  height: 69px;
 
   @include phone {
     height: 140px;
@@ -144,9 +144,6 @@ header {
     }
 
 
-
-
-
   }
 
   &__image {
@@ -164,7 +161,6 @@ header {
       object-position: center;
     }
   }
-
 
 
 }
