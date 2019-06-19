@@ -88,6 +88,9 @@ class Heroes extends Component {
         // if (heroName.indexOf(this.searchString) === 0) {
         // if (heroName.test(this.searchString)) {
         if (startsWith(heroName, this.searchString)) {
+            alert(startsWith(heroName, this.searchString));
+            alert(heroName);
+            alert(this.searchString);
             heroData.isHero = 'filtered';
             const time = setTimeout(() => {
                 const heroFiltered = document.querySelector('.filtered');
