@@ -24,12 +24,12 @@ class Heroes extends Component {
         };
 
         this.searchString = '';
-        // this.timeout = null;
+        this.timeout = null;
     }
 
     //search function
     search = (e) => {
-        // clearTimeout(this.timeout);
+        clearTimeout(this.timeout);
         if ((e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode === 32) {
             this.searchString = this.searchString + e.key;
             // this.searchString && console.log(this.searchString);
@@ -49,34 +49,34 @@ class Heroes extends Component {
             }
 
         }
-        // this.timeout = setTimeout(() => {
-        //     clearTimeout(this.timeout);
-        //     this.searchString = '';
-        //     this.setState({
-        //         heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
-        //     })
-        // }, 3000);
+        this.timeout = setTimeout(() => {
+            clearTimeout(this.timeout);
+            this.searchString = '';
+            this.setState({
+                heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
+            })
+        }, 3000);
 
     }
 
-    //mob search
+    //mob search (only for android)
     mobSearch = e => {
+        clearTimeout(this.timeout);
         const ua = navigator.userAgent.toLowerCase();
-        const isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+        const isAndroid = ua.indexOf("android") > -1;
         if (isAndroid) {
-            // console.log(typeof (e.target.value));
             this.searchString = (e.target.value).toString();
             this.setState({
                 heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
             });
         }
 
-        // this.timeout = setTimeout(() => {n
-        //     this.searchString = '';
-        //     this.setState({
-        //         heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
-        //     })
-        // }, 3000);
+        this.timeout = setTimeout(() => {
+            this.searchString = '';
+            this.setState({
+                heroStats: this.state.heroStats.map(hero => this.byNameFilter(hero))
+            })
+        }, 3000);
 
     }
 
@@ -84,9 +84,6 @@ class Heroes extends Component {
     // Filter search name function (passed to search function in filter method)
     byNameFilter = (heroData) => {
         const heroName = heroData.localized_name.toLowerCase();
-        // if (heroName.startsWith(this.searchString)) {
-        // if (heroName.indexOf(this.searchString) === 0) {
-        // if (heroName.test(this.searchString)) {
         if (startsWith(heroName, this.searchString.toLowerCase())) {
             heroData.isHero = 'filtered';
             const time = setTimeout(() => {
@@ -108,9 +105,7 @@ class Heroes extends Component {
         }
 
         return heroData;
-// return ;
-    }
-    ;
+    };
 
 // sorting by Name function (passed to compare method in api call)
     compare = (firstHero, nextHero) => {
@@ -127,10 +122,9 @@ class Heroes extends Component {
         return comparison;
 
 
-    }
+    };
 
 //open keyboard on mobile phones
-
     openKeyboard = () => {
         document.querySelector('.searchBar').focus();
         document.querySelector('.searchBar').click();
